@@ -42,7 +42,7 @@ $("button").on("click", function(event) {
       var type = $(this).data("name")
       // console.log(gif)
       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=dc6zaTOxFJmzC&limit=10";
-      // var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + gif
+      // var queryURL = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + gif
       $.ajax({
       url: queryURL,
       method: "GET"
