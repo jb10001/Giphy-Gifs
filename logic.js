@@ -1,4 +1,4 @@
-$( document ).ready(function() {          // EVERYTHING goes IN HERE
+$(document).ready(function() {          // EVERYTHING goes IN HERE
     var topics = ['guitar', 'books', 'dogs', 'iphone', 'robots'];
     console.log( "ready!" );
     console.log("hello");
@@ -50,7 +50,7 @@ $("button").on("click", function(event) {
       var gifArray = results.data
       console.log(gifArray)
       // console.log(response.data[0].images.fixed_height.url)
-      var animalDiv = $("<div >");
+      var animalDiv = $("<div>");
     for (var i = 0; i < gifArray.length; i++) {
        var rating = gifArray[i].rating;
 
@@ -59,17 +59,17 @@ $("button").on("click", function(event) {
        var animated = gifArray[i].images.fixed_height.url;
         var still = gifArray[i].images.fixed_height_still.url;
 
-       var animalImage = $("<img>");                   // setting an animalImage variable and using jQuery to append an img tag to page
-        animalImage.attr("src", still);                // making animal image src. still is the property of src. 
-        animalImage.attr("data-still", still);         // grabbing data still and putting it in quotation marks
-        animalImage.attr("data-animate", animated);    // grabbing data-animate on giphy and making it animated.
-        animalImage.attr("data-state", "still");      //  data-state on attribute with a "still" property
-        animalImage.addClass("animal-image");         //  animal image - adding class animal-image 
+       var animalImage = $("<img>");                   
+        animalImage.attr("src", still);                 
+        animalImage.attr("data-still", still);         
+        animalImage.attr("data-animate", animated);    
+        animalImage.attr("data-state", "still");      
+        animalImage.addClass("animal-image");         
 
-       animalDiv.append(p);                           // animal Image 
+       animalDiv.append(p);                            
         animalDiv.append(animalImage);
 
-       $("#images").prepend(animalDiv);               // grabbing imaga/
+       $("#images").prepend(animalDiv);               
         
      }
         
@@ -92,7 +92,20 @@ $("button").on("click", function(event) {
     });
 
   });
-                              
+                     
+function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
+    $(areaToAddTo).empty();
+
+    for (var i = 0; i < arrayToUse.length; i++) {
+      var a = $("<button>");
+      a.addClass(classToAdd);
+      a.attr("data-type", arrayToUse[i]);
+      a.text(arrayToUse[i]);
+      $(areaToAddTo).append(a);
+    };
+
+
+
         // what does q do: string Search query term or phrase
         // what does rating do: filters result by specified rating
         // what does limit do: the maximum number of records to return
@@ -100,33 +113,4 @@ $("button").on("click", function(event) {
 /*
  // Use this query URL: https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=guitar
       */ 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- //commented out ')'    commented out '}'
 
